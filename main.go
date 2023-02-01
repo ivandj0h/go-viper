@@ -56,7 +56,7 @@ func init() {
 		panic(err)
 	}
 
-	err = redisclient.Set(ctx, "test", "Welcome to Golang with Redis and MongoDB", 0).Err()
+	err = redisclient.Set(ctx, "test", "Hello Guys", 0).Err()
 	if err != nil {
 		panic(err)
 	}
