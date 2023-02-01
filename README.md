@@ -16,6 +16,13 @@ go mod init
 go mod tidy
 ```
 
+**Compailer Plugin**
+
+```go
+go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+```
+
 **Generate Proto**
 
 ```go
@@ -26,4 +33,8 @@ protoc --proto_path=protos protos/*.proto --go_out=.
 
 ```go
 go run main.go
+```
+
+```go
+Masih terus dalam proses Pengembangan...
 ```

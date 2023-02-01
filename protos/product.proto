@@ -11,7 +11,7 @@ service ProductService {
     rpc GetProduct(Id) returns(Product);
     rpc CreateProduct(Product) returns(Id);
     rpc UpdateProduct(Product) returns(Status);
-    rpc DeleteProduct(Product) returns(Status);
+    rpc DeleteProduct(Id) returns(Status);
 }
 
 message Empty {};
