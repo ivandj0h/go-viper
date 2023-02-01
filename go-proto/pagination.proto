@@ -1,0 +1,9 @@
+syntax = "proto3";
+package go_proto;
+
+message Pagination {
+    uint32 total = 1;
+    uint32 per_page = 2;
+    uint32 current_page = 3;
+    uint32 last_page = 4;
+}
