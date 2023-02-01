@@ -4,10 +4,14 @@ package go_grpc;
 
 import "pagination.proto";
 
-option go_package = "go_grpc/pb/product";
+option go_package = "pb/product";
 
 service ProductService {
     rpc GetAllProducts(Empty) returns(Products);
+    rpc GetProduct(Id) returns(Product);
+    rpc CreateProduct(Product) returns(Id);
+    rpc UpdateProduct(Product) returns(Status);
+    rpc DeleteProduct(Product) returns(Status);
 }
 
 message Empty {};
@@ -21,10 +25,19 @@ message Product{
     uint64 id = 1;
     string name = 2;
     double price = 3;
-    Category category = 4;
+    uint32 stock = 4;
+    Category category = 5;
 }
 
 message Category {
     uint64 id = 1;
     string name = 2;
+}
+
+message Id {
+    uint32 id = 1;
+}
+
+message Status {
+    uint32 status = 1;
 }
