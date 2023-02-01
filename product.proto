@@ -1,5 +1,5 @@
 syntax = "proto3";
-package go_proto;
+package go_grpc;
 
 import "pagination.proto";
 
