@@ -32,7 +32,7 @@ protoc --proto_path=protos protos/*.proto --go_out=.
 **Run The App**
 
 ```go
-go run main.go
+go run cmds/main.go
 ```
 
 ```go

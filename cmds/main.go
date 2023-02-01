@@ -4,6 +4,9 @@ import (
 	"log"
 	"net"
 
+	"go-grpc/cmds/services"
+	productPb "go-grpc/pb/product"
+
 	"google.golang.org/grpc"
 )
 
@@ -20,6 +23,11 @@ func main() {
 	}
 
 	grpcServer := grpc.NewServer()
+
+	productService := services.ProductService{}
+	productPb.RegisterProductServiceServer(grpcServer, &productService)
+
+	log.Printf("Server Starting on %v", netListen.Addr())
 	if err := grpcServer.Serve(netListen); err != nil {
 		log.Fatalf("Failed Lagi Om!! disini %v", err.Error())
 	}
