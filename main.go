@@ -56,4 +56,9 @@ func main() {
 	}
 
 	fmt.Println(hasilProduct)
+
+	// loop data inside product
+	for _, product := range hasilProduct.GetData() {
+		fmt.Println(product.GetName())
+	}
 }
