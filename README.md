@@ -26,7 +26,7 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 **Generate Proto**
 
 ```go
-protoc --proto_path=protos protos/*.proto --go_out=.
+protoc --proto_path=protos protos/*.proto --go_out=%GOPATH%\src --go-grpc_out=%GOPATH%\src
 ```
 
 **Run The App**
