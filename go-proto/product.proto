@@ -1,8 +1,9 @@
 syntax = "proto3";
 package go_proto;
 
-
 import "pagination.proto";
+
+option go_package = "/pb";
 
 message Products {
     Pagination pagination = 1;
