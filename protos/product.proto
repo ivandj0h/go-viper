@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package go_grpc;
+
+import "pagination.proto";
+
+option go_package = "go_grpc/pb/product";
+
+service ProductService {
+    rpc GetAllProducts(Empty) returns(Products);
+}
+
+message Empty {};
+
+message Products {
+    Pagination pagination = 1;
+    repeated Product data = 2;
+}
+
+message Product{
+    uint64 id = 1;
+    string name = 2;
+    double price = 3;
+    Category category = 4;
+}
+
+message Category {
+    uint64 id = 1;
+    string name = 2;
+}
